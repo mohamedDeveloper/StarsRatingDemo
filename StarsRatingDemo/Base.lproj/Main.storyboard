@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" systemVersion="17A277" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina3_5" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -9,16 +13,72 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="StarsRatingDemo" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="7aG-pb-ReZ" customClass="RatingController" customModule="StarsRatingDemo" customModuleProvider="target">
+                                <rect key="frame" x="80" y="119" width="160" height="32"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pdY-Gu-qeD">
+                                        <rect key="frame" x="0.0" y="0.0" width="32" height="32"/>
+                                        <state key="normal" image="star"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="juM-VZ-m8K">
+                                        <rect key="frame" x="32" y="0.0" width="32" height="32"/>
+                                        <state key="normal" image="star"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iHw-xY-KSR">
+                                        <rect key="frame" x="64" y="0.0" width="32" height="32"/>
+                                        <state key="normal" image="star"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N6F-1X-3P4">
+                                        <rect key="frame" x="96" y="0.0" width="32" height="32"/>
+                                        <state key="normal" image="star"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1E1-vl-Z54">
+                                        <rect key="frame" x="128" y="0.0" width="32" height="32"/>
+                                        <state key="normal" image="star"/>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="koZ-v6-ptN">
+                                <rect key="frame" x="124" y="181" width="72" height="30"/>
+                                <state key="normal" title="Print Stars"/>
+                                <connections>
+                                    <action selector="printNumberOfStars:" destination="BYZ-38-t0r" eventType="touchUpInside" id="DdU-vw-KSb"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Row-dC-gzA">
+                                <rect key="frame" x="118" y="247" width="84" height="30"/>
+                                <state key="normal" title="Clear Stars !"/>
+                                <connections>
+                                    <action selector="clearStars:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Lek-vJ-PRb"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="Row-dC-gzA" firstAttribute="top" secondItem="koZ-v6-ptN" secondAttribute="bottom" constant="36" id="IvM-9h-OKN"/>
+                            <constraint firstItem="7aG-pb-ReZ" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="99" id="Srs-BB-UUD"/>
+                            <constraint firstItem="koZ-v6-ptN" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="h27-SW-vfb"/>
+                            <constraint firstItem="koZ-v6-ptN" firstAttribute="top" secondItem="7aG-pb-ReZ" secondAttribute="bottom" constant="30" id="h9o-cW-Slf"/>
+                            <constraint firstItem="Row-dC-gzA" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="mKH-iN-2gd"/>
+                            <constraint firstItem="7aG-pb-ReZ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="poT-3g-jxF"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="starsHandler" destination="7aG-pb-ReZ" id="YnX-13-9j8"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="188" y="-26"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="star" width="32" height="32"/>
+    </resources>
 </document>
